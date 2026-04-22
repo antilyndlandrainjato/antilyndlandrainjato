@@ -198,7 +198,6 @@ nav ul li a {
     padding: 8px 0;
 }
 
-/* Effet underline professionnel */
 nav ul li a::after {
     content: '';
     position: absolute;
@@ -206,7 +205,7 @@ nav ul li a::after {
     left: 0;
     width: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--primary-color), #a87bff);
+    background-color: var(--primary-color);
     transition: width 0.3s ease;
 }
 
@@ -218,9 +217,8 @@ nav ul li a:hover {
     color: var(--primary-color);
 }
 
-/* Bouton Nous rejoindre desktop */
 .btn-contact {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background-color: var(--primary-color);
     color: var(--light-color);
     border: none;
     padding: 10px 24px;
@@ -236,11 +234,10 @@ nav ul li a:hover {
 
 .btn-contact:hover {
     transform: translateY(-2px);
-    background: linear-gradient(135deg, #9a6aff, var(--primary-color));
+    background-color: #9a6aff;
     box-shadow: 0 5px 20px rgba(133, 80, 255, 0.5);
 }
 
-/* Menu mobile toggle */
 .menu-toggle {
     display: none;
     background: none;
@@ -257,18 +254,16 @@ nav ul li a:hover {
     color: var(--primary-color);
 }
 
-/* ========== RESPONSIVE MOBILE ========== */
+/* ========== RESPONSIVE MOBILE HEADER ========== */
 @media (max-width: 768px) {
     header {
         padding: 12px 0;
     }
     
-    /* Afficher le bouton hamburger */
     .menu-toggle {
         display: block;
     }
     
-    /* Menu mobile - les 4 menus sont ici */
     nav {
         position: fixed;
         top: 0;
@@ -276,8 +271,7 @@ nav ul li a:hover {
         width: 80%;
         max-width: 320px;
         height: 100vh;
-        background: linear-gradient(135deg, rgba(7, 5, 18, 0.98), rgba(20, 9, 39, 0.98));
-        backdrop-filter: blur(15px);
+        background-color: #0a0618;
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
@@ -293,7 +287,6 @@ nav ul li a:hover {
         right: 0;
     }
     
-    /* Les 4 menus en colonne */
     nav ul {
         flex-direction: column;
         gap: 25px;
@@ -317,7 +310,6 @@ nav ul li a:hover {
         bottom: 8px;
     }
     
-    /* Bouton Nous rejoindre dans le menu mobile */
     .btn-contact {
         width: 100%;
         text-align: center;
@@ -326,7 +318,6 @@ nav ul li a:hover {
         font-size: 16px;
     }
     
-    /* Ajustement du logo */
     .logo img {
         height: 45px;
     }
@@ -375,7 +366,6 @@ nav ul li a:hover {
     }
 }
 
-/* Pour les tablettes */
 @media (min-width: 769px) and (max-width: 992px) {
     nav ul {
         gap: 20px;
@@ -402,8 +392,11 @@ nav ul li a:hover {
 /* SECTION HERO */
 .hero {
     height: 102vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                url('images/couverture.jpeg') center/cover no-repeat;
+    background-color: #000;
+    background-image: url('images/couverture.jpeg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     text-align: center;
@@ -414,9 +407,9 @@ nav ul li a:hover {
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Correction: Ajustement du mot Fivondronana */
 .haut-accueil {
     margin-top: -20px;
     font-size: 18px;
@@ -462,6 +455,64 @@ nav ul li a:hover {
     border: solid 1px #ffffff;
 }
 
+/* Hero responsive */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content {
+        padding: 0 15px;
+    }
+    
+    .haut-accueil {
+        width: 90%;
+        font-size: 12px;
+        padding: 8px 15px;
+        margin: 60px auto 20px;
+    }
+    
+    .soustitre {
+        font-size: 1.2rem;
+        margin-top: 15px;
+    }
+    
+    .petitsubtitle {
+        font-size: 0.9rem;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+        display: block;
+        width: 80%;
+        margin: 10px auto;
+        text-align: center;
+    }
+    
+    .btn-secondary {
+        margin-left: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+    
+    .soustitre {
+        font-size: 1rem;
+    }
+    
+    .petitsubtitle {
+        font-size: 0.8rem;
+    }
+    
+    #primaire, #secondaire {
+        font-size: 14px;
+        width: 90%;
+    }
+}
+
 .hero1 {
     height: 400px;
     background-color: #070512;
@@ -470,11 +521,11 @@ nav ul li a:hover {
     justify-content: center;
     text-align: center;
     color: var(--light-color);
-    background: linear-gradient(to right, #250d3e, #070512, #250d3e);
 }
 
 .hero-slogant {
     text-align: center;
+    padding: 0 20px;
 }
 
 .hero-slogant h1 {
@@ -507,9 +558,29 @@ nav ul li a:hover {
     border-radius: 150px;
 }
 
+@media (max-width: 768px) {
+    .hero1 {
+        height: auto;
+        padding: 60px 0;
+    }
+    
+    .slogant {
+        font-size: 1.5rem;
+    }
+    
+    .slogant-couleur {
+        font-size: 1.2rem;
+        margin-top: 20px;
+    }
+    
+    .intro-slogant {
+        font-size: 0.9rem;
+    }
+}
+
 /* SECTION A PROPOS */
 .about-section {
-    padding: 100px 0;
+    padding: 80px 0;
     background-color: var(--purple-dark);
     min-height: 620px;
 }
@@ -518,35 +589,28 @@ nav ul li a:hover {
     color: var(--gray-light);
 }
 
-/* Suppression du background et alignement à gauche */
 .haut-localisation {
     font-size: 14px;
     letter-spacing: 2px;
     color: var(--primary-color);
-    margin-left: 180px;
-    padding: 0;
-    background: none;
-    border: none;
-    width: auto;
-    height: auto;
-    text-align: left;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 .titre_localisation {
     font-size: 40px;
     color: var(--light-color);
-    margin-left: -720px;
-    margin-top: 30px;
-    margin-bottom: 60px;
-    text-align: left;
-    display: inline-block;
+    text-align: center;
+    margin-bottom: 50px;
+    display: block;
 }
 
 .titre_localisation::after {
     content: '';
     position: absolute;
     bottom: -10px;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 60px;
     height: 3px;
     background-color: var(--primary-color);
@@ -562,20 +626,16 @@ nav ul li a:hover {
     padding: 0 20px;
 }
 
-/* Image en droite et remontée */
 .about-image {
     flex: 1;
-    margin-top: -80px;
 }
 
 .about-image img {
-    width: 110%;
+    width: 100%;
     border-radius: 10px;
     box-shadow: var(--box-shadow);
-    margin-top: -110px;
 }
 
-/* Texte à gauche */
 .about-content {
     flex: 1;
     text-align: left;
@@ -587,7 +647,6 @@ nav ul li a:hover {
     line-height: 1.6;
 }
 
-/* Lieux avec icônes - alignés à gauche */
 .lieu {
     margin-top: 20px;
     display: flex;
@@ -606,7 +665,6 @@ nav ul li a:hover {
     margin-top: 25px;
 }
 
-/* Badge nombre */
 .nombre {
     position: relative;
     background-color: var(--purple-dark);
@@ -627,8 +685,21 @@ nav ul li a:hover {
     color: var(--light-color);
 }
 
-/* Responsive */
+@media (max-width: 992px) {
+    .about-section {
+        padding: 60px 0;
+    }
+    
+    .titre_localisation {
+        font-size: 32px;
+    }
+}
+
 @media (max-width: 768px) {
+    .about-section {
+        padding: 50px 0;
+    }
+    
     .container2 {
         flex-direction: column;
         text-align: center;
@@ -648,15 +719,12 @@ nav ul li a:hover {
     .titre_localisation {
         text-align: center;
         display: block;
-    }
-    
-    .titre_localisation::after {
-        left: 50%;
-        transform: translateX(-50%);
+        font-size: 28px;
     }
     
     .haut-localisation {
         text-align: center;
+        margin-bottom: 15px;
     }
     
     .lieu {
@@ -672,9 +740,27 @@ nav ul li a:hover {
     }
 }
 
+@media (max-width: 480px) {
+    .about-section {
+        padding: 40px 0;
+    }
+    
+    .titre_localisation {
+        font-size: 24px;
+    }
+    
+    .about-content p {
+        font-size: 14px;
+    }
+    
+    .lieu {
+        font-size: 13px;
+    }
+}
+
 /* Section Activités récentes */
 .activite {
-    padding: 100px 0;
+    padding: 80px 0;
     background-color: var(--dark-color);
     min-height: 550px;
 }
@@ -686,6 +772,7 @@ nav ul li a:hover {
     flex-wrap: wrap;
     margin-top: 50px;
     background-color: var(--dark-color);
+    padding: 0 20px;
 }
 
 .activite-recent-card1,
@@ -716,7 +803,6 @@ nav ul li a:hover {
     transition: transform 0.5s ease;
 }
 
-/* Animation zoom-in de l'image au survol */
 .activite-recent-card1:hover .imageactivite,
 .activite-recent-card2:hover .imageactivite,
 .activite-recent-card3:hover .imageactivite {
@@ -801,6 +887,7 @@ nav ul li a:hover {
     max-width: 600px;
     font-size: 15px;
     line-height: 1.5;
+    padding: 0 20px;
 }
 
 .voiractivite {
@@ -829,9 +916,60 @@ nav ul li a:hover {
     text-decoration: none;
 }
 
+@media (max-width: 768px) {
+    .activite {
+        padding: 50px 0;
+    }
+    
+    .activite-recent-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+    
+    .activite-recent-card1,
+    .activite-recent-card2,
+    .activite-recent-card3 {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .titre-activite-recent {
+        font-size: 28px;
+    }
+    
+    .sous-activite-recent {
+        font-size: 14px;
+    }
+    
+    .imageactivite {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .activite {
+        padding: 40px 0;
+    }
+    
+    .titre-activite-recent {
+        font-size: 24px;
+    }
+    
+    .haut-activite-recent {
+        font-size: 12px;
+    }
+    
+    .activite-recent-card1 h3,
+    .activite-recent-card2 h3,
+    .activite-recent-card3 h3 {
+        font-size: 1rem;
+    }
+}
+
 /* Section Tranches d'âge */
 .tranches-age {
-    padding: 40px 0 120px 0;
+    padding: 60px 0;
     background-color: var(--dark-color);
     min-height: 550px;
 }
@@ -859,9 +997,9 @@ nav ul li a:hover {
     max-width: 600px;
     font-size: 15px;
     line-height: 1.5;
+    padding: 0 20px;
 }
 
-/* Grid pour disposition 2x2 */
 .tranches-age-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -871,10 +1009,8 @@ nav ul li a:hover {
     padding: 0 20px;
 }
 
-/* Cartes */
 .tranches-age-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
-    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     border: 1px solid rgba(133, 80, 255, 0.2);
     overflow: hidden;
@@ -985,25 +1121,116 @@ nav ul li a:hover {
     line-height: 1.6;
 }
 
+@media (max-width: 992px) {
+    .tranches-age-grid {
+        max-width: 900px;
+        gap: 25px;
+    }
+    
+    .tranches-age-image-container {
+        height: 270px;
+    }
+    
+    .image-overlay-content h3 {
+        font-size: 1.4rem;
+    }
+    
+    .card-text-content h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .tranches-age {
+        padding: 50px 0;
+    }
+    
+    .tranches-age-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .titre-tranches-age {
+        font-size: 28px;
+    }
+    
+    .tranches-age-image-container {
+        height: 250px;
+    }
+    
+    .image-overlay-content h3 {
+        font-size: 1.3rem;
+    }
+    
+    .card-text-content {
+        padding: 20px;
+    }
+    
+    .card-text-content h3 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tranches-age {
+        padding: 40px 0;
+    }
+    
+    .titre-tranches-age {
+        font-size: 24px;
+    }
+    
+    .sous-tranches-age {
+        font-size: 13px;
+    }
+    
+    .tranches-age-image-container {
+        height: 220px;
+    }
+    
+    .image-overlay-content {
+        padding: 20px;
+    }
+    
+    .image-overlay-content h3 {
+        font-size: 1.2rem;
+    }
+    
+    .age-indicatif {
+        font-size: 13px;
+    }
+    
+    .autre-nom {
+        font-size: 11px;
+    }
+    
+    .card-text-content h3 {
+        font-size: 1rem;
+    }
+    
+    .description {
+        font-size: 13px;
+    }
+}
+
 /* ========== SECTION NOS MISSIONS ========== */
 .nosmissions {
     height: 500px;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                url('images/mission.jpg') center/cover no-repeat;
+    background-color: #000;
+    background-image: url('images/mission.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     text-align: center;
     color: var(--light-color);
     padding-top: 10px;
-    background-position: center;
 }
 
 .titre_mission {
     font-size: 40px;
     color: var(--light-color);
-    margin-left: -720px;
-    margin-top: 30px;
-    margin-bottom: 60px;
     text-align: center;
     display: inline-block;
 }
@@ -1012,11 +1239,13 @@ nav ul li a:hover {
     content: '';
     position: absolute;
     bottom: -10px;
-    left: 0;
+    left: 50%;
+    transform: translateX(-50%);
     width: 60px;
     height: 3px;
     background-color: var(--primary-color);
 }
+
 .couleurfond {
     width: 100%;
     height: 500px;
@@ -1030,6 +1259,9 @@ nav ul li a:hover {
     width: 800px;
     height: 250px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    padding: 0 20px;
 }
 
 .haut-mission {
@@ -1053,50 +1285,46 @@ nav ul li a:hover {
     margin-bottom: 20px;
 }
 
-/* ========== 6 PRINCIPES FONDAMENTAUX : 3 colonnes x 2 lignes ========== */
-.principes-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+@media (max-width: 768px) {
+    .nosmissions {
+        height: auto;
+        min-height: 400px;
+        padding: 80px 0;
+    }
+    
+    .missions-content {
+        width: 100%;
+        height: auto;
+    }
+    
+    .nosmissions h1 {
+        font-size: 2rem;
+    }
+    
+    .soustitre1 {
+        font-size: 16px;
+    }
+    
+    .titre_mission {
+        font-size: 28px;
+    }
 }
 
-.principe-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
-    backdrop-filter: blur(10px);
-    border-radius: 16px;
-    border: 1px solid rgba(133, 80, 255, 0.2);
-    padding: 30px 20px;
-    text-align: center;
-    transition: var(--transition);
+@media (max-width: 480px) {
+    .nosmissions h1 {
+        font-size: 1.5rem;
+    }
+    
+    .soustitre1 {
+        font-size: 14px;
+    }
+    
+    .titre_mission {
+        font-size: 24px;
+    }
 }
 
-.principe-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary-color);
-    box-shadow: 0 10px 30px rgba(133, 80, 255, 0.2);
-}
-
-.principe-card .petitlogo1 {
-    margin: 0 auto 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.principe-card h3 {
-    color: var(--light-color);
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-}
-
-.principe-card .lieu-activite {
-    padding: 0;
-    justify-content: center;
-}
-
+/* ========== 6 PRINCIPES FONDAMENTAUX ========== */
 .petitlogo1 {
     width: 40px;
     height: 40px;
@@ -1114,7 +1342,7 @@ nav ul li a:hover {
 
 /* ========== SECTION DIMENSION SPIRITUELLE ========== */
 .hero2 {
-    background: linear-gradient(135deg, #0a0618, #140927, #0a0618);
+    background-color: #0a0618;
     margin-top: 0;
     padding: 80px 0;
     display: flex;
@@ -1180,8 +1408,7 @@ nav ul li a:hover {
 }
 
 .activite-recent-card11 {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
-    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.08);
     border-radius: 15px;
     border: 1px solid rgba(133, 80, 255, 0.2);
     padding: 30px 20px;
@@ -1211,17 +1438,69 @@ nav ul li a:hover {
     box-shadow: 0 10px 30px rgba(133, 80, 255, 0.2);
 }
 
+@media (max-width: 992px) {
+    .activite-recent-grid1 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero2 {
+        padding: 50px 0;
+    }
+    
+    .activite-recent-grid1 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .titre-dimenionspirituelle {
+        font-size: 28px;
+    }
+    
+    .sous-dimenionspirituelle {
+        font-size: 14px;
+        padding: 0 20px;
+    }
+    
+    .haut-dimenionspirituelle {
+        width: 90%;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .titre-dimenionspirituelle {
+        font-size: 24px;
+    }
+    
+    .activite-recent-card11 {
+        padding: 20px;
+    }
+    
+    .activite-recent-card11 i {
+        font-size: 30px;
+    }
+    
+    .activite-recent-card11 h3 {
+        font-size: 1rem;
+    }
+}
+
 /* ========== SECTION NOS ACTIVITES ========== */
 .nosactivites {
     height: 500px;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                url('images/mpmianjoria.JPG') center/cover no-repeat;
+    background-color: #000;
+    background-image: url('images/mpmianjoria.JPG');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
     display: flex;
     align-items: center;
     text-align: center;
     color: var(--light-color);
     padding-top: 10px;
-    background-position: top;
 }
 
 .titreactivite {
@@ -1230,20 +1509,28 @@ nav ul li a:hover {
     margin-bottom: 30px;
 }
 
-/* ========== ACTIVITES HEBDOMADAIRES : 3 colonnes x 2 lignes ========== */
-.activites-hebdo-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+@media (max-width: 768px) {
+    .nosactivites {
+        height: auto;
+        min-height: 350px;
+        padding: 60px 0;
+    }
+    
+    .titreactivite {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .titreactivite {
+        font-size: 1.5rem;
+    }
 }
 
 /* ========== SECTION GRANDS CAMPS ========== */
 .hero3 {
     background-color: var(--dark-color);
-    padding: 40px 0 60px 0;
+    padding: 60px 0;
 }
 
 .nosactivitetitre {
@@ -1253,7 +1540,13 @@ nav ul li a:hover {
     padding: 0 20px;
 }
 
-/* ========== CEREMONIES ET RITES : 2x2 ========== */
+@media (max-width: 768px) {
+    .hero3 {
+        padding: 40px 0;
+    }
+}
+
+/* ========== CEREMONIES ET RITES ========== */
 .grid-card-rites {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1264,7 +1557,6 @@ nav ul li a:hover {
 }
 
 .bloc {
-    margin-left: 20px;
     width: 100%;
     display: flex;
     border-radius: 17px;
@@ -1321,7 +1613,37 @@ nav ul li a:hover {
     line-height: 1.4;
 }
 
-/* ========== GALERIE : 4 images par ligne sur 2 étages ========== */
+@media (max-width: 768px) {
+    .grid-card-rites {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+    
+    .bloc {
+        flex-direction: column;
+    }
+    
+    .contour {
+        width: 100%;
+        height: 200px;
+        border-radius: 15px 15px 0 0;
+    }
+    
+    .soratradroite {
+        width: 100%;
+        padding: 20px;
+    }
+    
+    .titre-soratradroite {
+        font-size: 18px;
+    }
+    
+    .sous-soratradroite {
+        font-size: 13px;
+    }
+}
+
+/* ========== GALERIE ========== */
 .galerierehetre {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1360,24 +1682,23 @@ nav ul li a:hover {
     transform: scale(1.1);
 }
 
-/* ========== SECTIONS CONTACT ET NOUS REJOINDRE ========== */
-#contact, #nousrejoindre {
-    padding: 80px 20px;
-    text-align: center;
-    background-color: var(--dark-color);
-    color: var(--light-color);
+@media (max-width: 992px) {
+    .galerierehetre {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
 }
 
-#contact h2, #nousrejoindre h2 {
-    color: var(--light-color);
-}
-
-/* ========== FOOTER ========== */
-footer {
-    background-color: var(--dark-color);
-    color: var(--light-color);
-    text-align: center;
-    padding: 30px 20px;
+@media (max-width: 768px) {
+    .galerierehetre {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .contoursary {
+        max-width: 400px;
+        margin: 0 auto;
+    }
 }
 
 /* ========== ANIMATIONS ========== */
@@ -1392,254 +1713,10 @@ footer {
     }
 }
 
-/* ========== RESPONSIVE DESIGN GLOBAL ========== */
-@media (max-width: 992px) {
-    .principes-grid,
-    .activites-hebdo-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .activite-recent-grid1 {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .grid-card-rites {
-        grid-template-columns: 1fr;
-        max-width: 500px;
-    }
-    
-    .galerierehetre {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
-    .tranches-age-grid {
-        max-width: 900px;
-        gap: 25px;
-    }
-    
-    .tranches-age-image-container {
-        height: 270px;
-    }
-    
-    .image-overlay-content h3 {
-        font-size: 1.4rem;
-    }
-    
-    .card-text-content h3 {
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .container {
-        padding: 0 15px;
-    }
-    
-    .menu-toggle {
-        display: block;
-    }
-    
-    .hero h1 {
-        font-size: 2rem;
-    }
-    
-    .hero-content {
-        padding: 0 20px;
-    }
-    
-    .haut-accueil {
-        width: 90%;
-        font-size: 12px;
-        padding: 8px 15px;
-    }
-    
-    .btn-primary,
-    .btn-secondary {
-        display: block;
-        width: 80%;
-        margin: 10px auto;
-        text-align: center;
-    }
-    
-    .btn-secondary {
-        margin-left: auto;
-    }
-    
-    .container2 {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .about-content,
-    .about-image {
-        width: 100%;
-    }
-    
-    .titre_localisation {
-        text-align: center;
-    }
-    
-    .haut-localisation {
-        width: auto;
-        margin: 0 auto 20px;
-    }
-    
-    .nombre {
-        margin: -30px auto 0;
-    }
-    
-    .lieu {
-        justify-content: center;
-    }
-    
-    .slogant {
-        font-size: 1.5rem;
-    }
-    
-    .hero-slogant {
-        margin-left: 0;
-        padding: 0 20px;
-    }
-    
-    .activite-recent-card1,
-    .activite-recent-card2,
-    .activite-recent-card3 {
-        width: 100%;
-    }
-    
-    .activite-recent-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .tranches-age-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .principes-grid,
-    .activites-hebdo-grid,
-    .activite-recent-grid1 {
-        grid-template-columns: 1fr;
-    }
-    
-    .bloc {
-        flex-direction: column;
-    }
-    
-    .contour {
-        width: 100%;
-        height: 200px;
-        border-radius: 15px 15px 0 0;
-    }
-    
-    .soratradroite {
-        width: 100%;
-        padding: 20px;
-    }
-    
-    .galerierehetre {
-        grid-template-columns: 1fr;
-    }
-    
-    .titre-tranches-age {
-        font-size: 28px;
-    }
-    
-    .tranches-age-image-container {
-        height: 250px;
-    }
-    
-    .image-overlay-content h3 {
-        font-size: 1.3rem;
-    }
-    
-    .card-text-content h3 {
-        font-size: 1.1rem;
-    }
-    
-    .nombre1 {
-        position: relative;
-        margin: 20px auto 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero h1 {
-        font-size: 1.5rem;
-    }
-    
-    .soustitre {
-        font-size: 1.2rem;
-    }
-    
-    .petitsubtitle {
-        font-size: 0.9rem;
-    }
-    
-    .tranches-age {
-        padding: 60px 0;
-    }
-    
-    .titre-tranches-age {
-        font-size: 24px;
-    }
-    
-    .tranches-age-image-container {
-        height: 220px;
-    }
-    
-    .image-overlay-content {
-        padding: 20px;
-    }
-    
-    .image-overlay-content h3 {
-        font-size: 1.2rem;
-    }
-    
-    .age-indicatif {
-        font-size: 13px;
-    }
-    
-    .autre-nom {
-        font-size: 11px;
-    }
-    
-    .card-text-content {
-        padding: 20px;
-    }
-    
-    .card-text-content h3 {
-        font-size: 1rem;
-    }
-    
-    .description {
-        font-size: 13px;
-    }
-    
-    .titreactivite {
-        font-size: 2rem;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ========== SECTION CONTACT ========== */
 .contact-section {
     padding: 80px 20px;
-    background: linear-gradient(135deg, #070512 0%, #140927 100%);
+    background-color: #070512;
     min-height: 100vh;
 }
 
@@ -1648,7 +1725,6 @@ footer {
     margin: 0 auto;
 }
 
-/* En-tête de section */
 .section-header {
     text-align: center;
     margin-bottom: 50px;
@@ -1686,17 +1762,14 @@ footer {
     margin: 0 auto;
 }
 
-/* Grid 2 colonnes */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
 }
 
-/* ========== CARTE INFORMATIONS GAUCHE ========== */
 .info-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
-    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.08);
     border-radius: 24px;
     border: 1px solid rgba(133, 80, 255, 0.2);
     padding: 30px;
@@ -1733,7 +1806,6 @@ footer {
     text-align: left;
 }
 
-/* Grille des infos - en colonne unique pour avoir plusieurs lignes */
 .info-grid {
     display: flex;
     flex-direction: column;
@@ -1757,7 +1829,7 @@ footer {
 .info-icon {
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background-color: var(--primary-color);
     border-radius: 12px;
     display: flex;
     align-items: center;
@@ -1783,10 +1855,8 @@ footer {
     line-height: 1.4;
 }
 
-/* ========== FORMULAIRE DROIT - ALIGNÉ À GAUCHE ========== */
 .form-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
-    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.08);
     border-radius: 24px;
     border: 1px solid rgba(133, 80, 255, 0.2);
     padding: 30px;
@@ -1823,7 +1893,6 @@ footer {
     text-align: left;
 }
 
-/* Groupe de formulaire - aligné à gauche */
 .form-group {
     margin-bottom: 20px;
     text-align: left;
@@ -1876,17 +1945,15 @@ footer {
     min-height: 100px;
 }
 
-/* Ligne 2 colonnes */
 .form-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 15px;
 }
 
-/* Bouton WhatsApp */
 .whatsapp-btn {
     width: 100%;
-    background: linear-gradient(135deg, #25D366, #128C7E);
+    background-color: #25D366;
     color: white;
     border: none;
     padding: 16px 24px;
@@ -1908,11 +1975,10 @@ footer {
 
 .whatsapp-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
+    background-color: #128C7E;
     gap: 15px;
 }
 
-/* Note WhatsApp */
 .whatsapp-note {
     text-align: center;
     margin-top: 15px;
@@ -1926,8 +1992,11 @@ footer {
     margin-right: 5px;
 }
 
-/* ========== RESPONSIVE CONTACT ========== */
 @media (max-width: 992px) {
+    .contact-section {
+        padding: 60px 15px;
+    }
+    
     .contact-grid {
         gap: 30px;
     }
@@ -1939,7 +2008,7 @@ footer {
 
 @media (max-width: 768px) {
     .contact-section {
-        padding: 60px 15px;
+        padding: 50px 15px;
     }
     
     .contact-grid {
@@ -1998,21 +2067,14 @@ footer {
     }
 }
 
-
-
-
-
-
-
 /* ========== SECTION NOUS REJOINDRE ========== */
 #nousrejoindre {
     padding: 100px 20px;
-    background: linear-gradient(135deg, #0a0618 0%, #140927 50%, #0a0618 100%);
+    background-color: #0a0618;
     position: relative;
     overflow: hidden;
 }
 
-/* Effet de fond décoratif */
 #nousrejoindre::before {
     content: '';
     position: absolute;
@@ -2033,7 +2095,6 @@ footer {
     }
 }
 
-/* Conteneur principal */
 .rejoindre-container {
     max-width: 900px;
     margin: 0 auto;
@@ -2041,7 +2102,6 @@ footer {
     z-index: 2;
 }
 
-/* Badge décoratif */
 .rejoindre-badge {
     text-align: center;
     margin-bottom: 30px;
@@ -2049,7 +2109,7 @@ footer {
 
 .rejoindre-badge span {
     display: inline-block;
-    background: linear-gradient(135deg, rgba(133, 80, 255, 0.2), rgba(133, 80, 255, 0.05));
+    background-color: rgba(133, 80, 255, 0.2);
     padding: 8px 25px;
     border-radius: 50px;
     font-size: 13px;
@@ -2060,7 +2120,6 @@ footer {
     backdrop-filter: blur(10px);
 }
 
-/* Titre principal */
 .rejoindre-title {
     text-align: center;
     margin-bottom: 20px;
@@ -2075,21 +2134,16 @@ footer {
 .rejoindre-title h2 i {
     color: var(--primary-color);
     margin-right: 12px;
-    background: linear-gradient(135deg, var(--primary-color), #a87bff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
 }
 
 .rejoindre-title .title-underline {
     width: 80px;
     height: 3px;
-    background: linear-gradient(90deg, var(--primary-color), transparent);
+    background-color: var(--primary-color);
     margin: 0 auto;
     border-radius: 3px;
 }
 
-/* Sous-titre */
 .rejoindre-subtitle {
     text-align: center;
     margin-bottom: 50px;
@@ -2108,7 +2162,6 @@ footer {
     margin: 0 5px;
 }
 
-/* Cartes des avantages */
 .rejoindre-avantages {
     display: flex;
     justify-content: center;
@@ -2118,8 +2171,7 @@ footer {
 }
 
 .avantage-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.02));
-    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.08);
     border-radius: 20px;
     padding: 25px 20px;
     text-align: center;
@@ -2137,7 +2189,7 @@ footer {
 .avantage-icon {
     width: 60px;
     height: 60px;
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background-color: var(--primary-color);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -2156,12 +2208,11 @@ footer {
     font-weight: 600;
 }
 
-/* Message d'appel */
 .rejoindre-message {
     text-align: center;
     margin-bottom: 40px;
     padding: 30px;
-    background: linear-gradient(135deg, rgba(133, 80, 255, 0.1), rgba(133, 80, 255, 0.02));
+    background-color: rgba(133, 80, 255, 0.1);
     border-radius: 30px;
     border: 1px solid rgba(133, 80, 255, 0.2);
 }
@@ -2184,7 +2235,6 @@ footer {
     font-style: italic;
 }
 
-/* Boutons */
 .rejoindre-buttons {
     display: flex;
     justify-content: center;
@@ -2211,13 +2261,14 @@ footer {
 }
 
 .btn-primary-rejoindre {
-    background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+    background-color: var(--primary-color);
     color: var(--light-color);
     box-shadow: 0 5px 20px rgba(133, 80, 255, 0.3);
 }
 
 .btn-primary-rejoindre:hover {
     transform: translateY(-3px);
+    background-color: #9a6aff;
     box-shadow: 0 10px 30px rgba(133, 80, 255, 0.5);
     gap: 15px;
 }
@@ -2235,7 +2286,6 @@ footer {
     gap: 15px;
 }
 
-/* Petite note finale */
 .rejoindre-note {
     text-align: center;
     margin-top: 40px;
@@ -2249,7 +2299,6 @@ footer {
     color: var(--primary-color);
 }
 
-/* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
     #nousrejoindre {
         padding: 60px 15px;
@@ -2307,13 +2356,15 @@ footer {
         max-width: 280px;
         margin: 0 auto;
     }
+    
+    .rejoindre-message p {
+        font-size: 14px;
+    }
 }
 
-
-
-/* ========== FOOTER COMPLET ========== */
+/* ========== FOOTER ========== */
 footer {
-    background: linear-gradient(135deg, #050310, var(--dark-color));
+    background-color: #050310;
     color: var(--light-color);
     text-align: center;
     padding: 60px 20px 30px;
@@ -2352,7 +2403,7 @@ footer {
     left: 0;
     width: 40px;
     height: 2px;
-    background: linear-gradient(90deg, var(--primary-color), #a87bff);
+    background-color: var(--primary-color);
 }
 
 .footer-section h3 i {
@@ -2401,7 +2452,6 @@ footer {
     transform: translateX(3px);
 }
 
-/* Liens sociaux */
 .social-links {
     display: flex;
     gap: 15px;
@@ -2412,7 +2462,7 @@ footer {
 .social-links a {
     width: 40px;
     height: 40px;
-    background: linear-gradient(135deg, rgba(133, 80, 255, 0.2), rgba(133, 80, 255, 0.05));
+    background-color: rgba(133, 80, 255, 0.2);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -2423,7 +2473,7 @@ footer {
 }
 
 .social-links a:hover {
-    background: var(--primary-color);
+    background-color: var(--primary-color);
     transform: translateY(-3px);
     border-color: var(--primary-color);
 }
@@ -2433,7 +2483,6 @@ footer {
     font-size: 18px;
 }
 
-/* Footer bottom */
 .footer-bottom {
     border-top: 1px solid rgba(133, 80, 255, 0.2);
     padding-top: 30px;
@@ -2453,7 +2502,6 @@ footer {
     margin: 0 3px;
 }
 
-/* ========== RESPONSIVE FOOTER ========== */
 @media (max-width: 992px) {
     .footer-content {
         grid-template-columns: repeat(2, 1fr);
@@ -2525,3 +2573,205 @@ footer {
 
 
 
+
+
+
+
+
+
+
+/* ========== ANIMATIONS ET STYLES SUPPLEMENTAIRES ========== */
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Modal pour la galerie d'images */
+.image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.image-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.image-modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.image-modal-content img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.image-modal-close {
+    position: absolute;
+    top: -45px;
+    right: 0;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.image-modal-close:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.image-modal-caption {
+    text-align: center;
+    color: white;
+    margin-top: 15px;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Messages d'erreur du formulaire */
+.form-error-message {
+    animation: fadeIn 0.3s ease;
+    color: #ff4d4d !important;
+    font-size: 12px;
+    margin-top: 5px;
+    padding-left: 5px;
+}
+
+.form-success-message {
+    animation: slideInRight 0.3s ease;
+}
+
+/* Champs de formulaire en erreur */
+input.error, 
+textarea.error {
+    border-color: #ff4d4d !important;
+    background-color: rgba(255, 77, 77, 0.05) !important;
+}
+
+/* Lien actif dans la navigation */
+nav ul li a.active {
+    color: var(--primary-color);
+}
+
+nav ul li a.active::after {
+    width: 100%;
+}
+
+/* Animation fade-in pour les éléments au scroll */
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation de pulsation pour les boutons */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 5px 20px rgba(133, 80, 255, 0.3);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 8px 30px rgba(133, 80, 255, 0.5);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 5px 20px rgba(133, 80, 255, 0.3);
+    }
+}
+
+.btn-primary-rejoindre:hover,
+.btn-contact:hover {
+    animation: pulse 0.5s ease;
+}
+
+/* Animation de chargement */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
