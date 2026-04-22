@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cssstylevf.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Nos contact</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="#" class="logo">
+                <img src="images/logoantilyndl.png" alt="Logo Antily NDL">
+            </a>
+            <nav id="main-nav">
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-home"></i> ACCUEIL</a></li>
+                    <li><a href="indexmissions.html"><i class="fas fa-bullseye"></i> NOS MISSIONS</a></li>
+                    <li><a href="indexactivites.html"><i class="fas fa-campground"></i> ACTIVITES</a></li>
+                    <li><a href="indexcontact.html"><i class="fas fa-envelope"></i> CONTACT</a></li>
+                </ul> 
+                <a href="indexrejoindre.html"><button class="btn-contact"><i class="fas fa-user-plus"></i> Nous rejoindre</button></a>
+            </nav>
+            <button class="menu-toggle" aria-label="Menu mobile">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+    <!-- SECTION CONTACT -->
+<section id="contact" class="contact-section">
+    <div class="contact-container">
+        <!-- En-tête -->
+        <div class="section-header">
+            <div class="badge">
+                 <p>CONTACTEZ-NOUS</p>
+            </div> <br>
+            <h2>Restons connectés</h2>
+            <p>Une question ? Un projet ? Écrivez-nous via WhatsApp, nous vous répondrons dans les meilleurs délais.</p>
+        </div>
+
+        <div class="contact-grid">
+            <!-- Colonne gauche - Informations -->
+            <div class="info-card">
+                <div class="info-header">
+                    <h3><i class="fas fa-address-card"></i> ANTILY NDL</h3>
+                    <p>FIVONDRONANA - FAHA-XII, ANDRAINJATO</p>
+                </div>
+                
+                <div class="info-grid">
+                    <!-- phone -->
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Téléphone</h4>
+                            <p>034 09 034 15</p>
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp -->
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>WhatsApp</h4>
+                            <p>+261 33 12 338 00</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Facebook -->
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Facebook</h4>
+                            <p>Antily Fiv NDL Andrainjato</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Adresse -->
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Adresse</h4>
+                            <p>ECAR Notre Dame de Lourdes Andrainjato Fianarantsoa<br>BP : 301</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Groupe -->
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Groupe</h4>
+                            <p>Fivondronana Faha-XII NDL — Diocèse de Fianarantsoa</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Colonne droite - Formulaire WhatsApp -->
+            <div class="form-card">
+                <div class="form-header">
+                    <h3><i class="fab fa-whatsapp"></i> Envoyez-nous un message</h3>
+                    <p>Au clic sur « Envoyer », votre message s'ouvrira dans WhatsApp et sera chez nous.</p>
+                </div>
+
+                <form id="whatsappForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>NOM <span class="required">*</span></label>
+                            <input type="text" id="nom" placeholder="Votre nom complet" required>
+                        </div>
+                        <div class="form-group">
+                            <label>TÉLÉPHONE</label>
+                            <input type="tel" id="telephone" placeholder="034 ...">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>EMAIL</label>
+                        <input type="email" id="email" placeholder="vous@exemple.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label>MESSAGE <span class="required">*</span></label>
+                        <textarea id="message" placeholder="Bonjour, j'aimerais en savoir plus sur..." required></textarea>
+                    </div>
+
+                    <button type="button" class="whatsapp-btn" onclick="sendToWhatsApp()">
+                        <i class="fab fa-whatsapp"></i>
+                        Envoyer via WhatsApp
+                    </button>
+                    <div class="whatsapp-note">
+                        <i class="fas fa-shield-alt"></i> Vos informations sont confidentielles
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    function sendToWhatsApp() {
+        // Récupération des valeurs
+        let nom = document.getElementById('nom').value.trim();
+        let telephone = document.getElementById('telephone').value.trim();
+        let email = document.getElementById('email').value.trim();
+        let message = document.getElementById('message').value.trim();
+        
+        // Validation des champs obligatoires
+        if (nom === "") {
+            alert("Veuillez entrer votre nom.");
+            document.getElementById('nom').focus();
+            return;
+        }
+        
+        if (message === "") {
+            alert("Veuillez entrer votre message.");
+            document.getElementById('message').focus();
+            return;
+        }
+        
+        // Construction du message pour WhatsApp
+        let whatsappMessage = "*Nouveau message depuis le site Antily NDL*%0A%0A";
+        whatsappMessage += "*Nom :* " + encodeURIComponent(nom) + "%0A";
+        
+        if (telephone !== "") {
+            whatsappMessage += "*Téléphone :* " + encodeURIComponent(telephone) + "%0A";
+        }
+        
+        if (email !== "") {
+            whatsappMessage += "*Email :* " + encodeURIComponent(email) + "%0A";
+        }
+        
+        whatsappMessage += "%0A*Message :*%0A" + encodeURIComponent(message) + "%0A%0A";
+        whatsappMessage += "*📅 Date :* " + new Date().toLocaleDateString('fr-FR') + "%0A";
+        whatsappMessage += "*⏰ Heure :* " + new Date().toLocaleTimeString('fr-FR');
+        
+        // Numéro WhatsApp (à remplacer par le vrai numéro)
+        let phoneNumber = "261331233800";
+        
+        // Création du lien WhatsApp
+        let whatsappUrl = "https://wa.me/" + phoneNumber + "?text=" + whatsappMessage;
+        
+        // Ouverture de WhatsApp
+        window.open(whatsappUrl, '_blank');
+    }
+</script>
+
+
+
+
+<footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h3>Antily NDL</h3>
+            <p>Groupe scout catholique éduquant la jeunesse malgache à travers la méthode scout dans la foi et l'engagement.</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=61566334165376" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com/ton-compte" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/261331233800" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://antilyndlandrainjato.github.io/antilyndlandrainjato/" target="_blank" rel="noopener noreferrer"><i class="fas fa-globe"></i></a>
+            </div>
+        </div>
+        <div class="footer-section">
+            <h3><i class="fas fa-link"></i> Liens rapides</h3>
+            <ul>
+                <li><a href="index.html"><i class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="indexmissions.html"><i class="fas fa-bullseye"></i> Nos missions</a></li>
+                <li><a href="indexactivites.html"><i class="fas fa-campground"></i> Activités</a></li>
+                <li><a href="indexcontact.html"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h3><i class="fas fa-clock"></i> Horaires</h3>
+            <p><i class="fas fa-church"></i> Réunion dominicale : 8h - 12h</p>
+            <p><i class="fas fa-users"></i> Réunion chefs : par convocation</p>
+            <p><i class="fas fa-campground"></i> Grand camp : trimestrielle</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Antily FIV-12 NDL - Tous droits réservés |  Fivondronana Faha-XII</p>
+    </div>
+</footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
